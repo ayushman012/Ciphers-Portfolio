@@ -1,0 +1,696 @@
+<!--
+==========================================================
+Project: My Portfolio 
+Owner/Coder: Ayushman Tripathy
+Date: 27th September 2024
+==========================================================
+-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title> Ayushman Tripathy_Portfolio </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<link rel="stylesheet" href="css/aos.css">
+
+	<link rel="stylesheet" href="css/ionicons.min.css">
+
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
+
+
+
+	<style>
+		/*======================================
+   ABOUT 
+======================================*/
+
+		.about-mf .box-shadow-full {
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+
+		.about-mf .about-img {
+			margin-bottom: 2rem;
+		}
+
+		.about-mf .about-img img {
+			margin-left: 10px;
+		}
+
+
+		.skill-mf .progress {
+			/* background-color: #cde1f8; */
+			margin: .5rem 0 1.2rem 0;
+			border-radius: 0;
+			height: .7rem;
+		}
+
+		.skill-mf .progress .progress-bar {
+			height: .7rem;
+			background-color: #ffbd39;
+		}
+
+
+		/* Animation styles */
+		#typing-animation {
+			position: relative;
+			font-size: 30px;
+			font-weight: bold;
+			color: rgb(255, 255, 255);
+			overflow: hidden;
+			white-space: nowrap;
+			animation: typing 3s steps(20, end) infinite;
+		}
+
+		#typing-animation:before {
+			content: "";
+			/* position: absolute; */
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 100%;
+			background-color: #ccc;
+			animation: typing-cursor 0.5s ease-in-out infinite;
+		}
+
+		@keyframes typing {
+			from {
+				width: 0;
+			}
+
+			to {
+				width: 100%;
+			}
+		}
+
+		@keyframes typing-cursor {
+			from {
+				width: 5px;
+			}
+
+			to {
+				width: 0;
+			}
+		}
+
+
+		/* project image zoom effect */
+
+		.zoom-effect {
+			overflow: hidden;
+			transition: transform 0.3s ease-out;
+		}
+
+		.zoom-effect:hover {
+			transform: scale(1.1);
+		}
+	</style>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html"> Ayushman Tripathy </a>
+			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+					<li class="nav-item"><a href="#home-section" class="nav-link"><span> Home </span></a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link"><span> About </span></a></li>
+					<li class="nav-item"><a href="#resume-section" class="nav-link"><span> Resume </span></a></li>
+					<li class="nav-item"><a href="#project-section" class="nav-link"><span> Projects </span></a></li>
+					<li class="nav-item"><a href="#contact-section" class="nav-link"><span> Contact </span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section id="home-section" class="hero">
+		<div class="home-slider  owl-carousel">
+			<div class="slider-item ">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+						data-scrollax-parent="true">
+						<div class="one-third js-fullheight order-md-last img"
+							style="background-image:url(images/bg_1.png); width:450px; height:150px;">
+							<div class="overlay"></div>
+						</div>
+						<div class="one-forth d-flex  align-items-center ftco-animate"
+							data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<span class="subheading">Hello!</span>
+								<h1 class="mb-4 mt-3">I'm <span>Ayushman Tripathy</span></h1>
+
+								<!-- Element to contain animated typing -->
+								<span id="typing-animation"></span>
+
+								<script>
+
+									// Initialize the typing animation
+									const typingAnimationElement = document.getElementById('typing-animation');
+
+									// Create an array of typing text
+									const typingTexts = [
+										'Engineer  ',
+										'Nemophilist  ',
+										'Musicophile   ',
+									];
+
+									// Create a function to display the typing animation for a given text
+									function playTypingAnimation(text) {
+										// Loop through each character and add it to the element
+										for (let i = 0; i < text.length; i++) {
+											setTimeout(() => {
+												typingAnimationElement.textContent += text[i];
+											}, i * 200); // Increase the delay to slow down the typing animation
+										}
+
+										// Once the animation is complete, reset the text and start over
+										setTimeout(() => {
+											typingAnimationElement.textContent = '';
+											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+										}, text.length * 200);
+									}
+
+									// Start the typing animation loop
+									playTypingAnimation(typingTexts[0]);
+
+								</script>
+
+								<br>
+								<br>
+								<h2>A Aspiring Engineer</h2>
+								<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+								<!-- <br> -->
+								<p><a href="https://www.linkedin.com/in/ayushman-tripathy-7bb149295/"
+										class="btn btn-primary py-3 px-4">LinkedIn</a>
+									<a href="https://github.com/ayushman012"
+										class="btn btn-white btn-outline-white py-3 px-4">My Works</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+		<div class="container">
+			<div class="row">
+				<div class="row d-flex align-items-stretch">
+					<!-- <div class="row d-flex"> -->
+					<div class="col-md-6 col-lg-5 d-flex">
+						<div class="img-about img d-flex align-items-stretch">
+							<div class="overlay">
+								<div class="row">
+									<div class="col-sm-6 col-md-5">
+										<div class="about-img">
+											<img src="images/about-me01.jpg" class="img-fluid rounded b-shadow-a" alt="">
+										</div>
+									</div>
+									<!-- Details next to profile image -->
+									<div class="col-sm-6 col-md-7">
+										<div class="about-info">
+											<p><span class="title-s"> Name: </span> <span> Ayushman Tripaty </span></p>
+											<p><span class="title-s"> Job Role: </span> <span> WebDev Engineer </span>
+											</p>
+											<p><span class="title-s"> Experience: </span> <span>None</span>
+											</p>
+											<p><span class="title-s"> Address: </span> <span>Berhampur,Odisha,India</span></p>
+										</div>
+									</div>
+								</div>
+
+								<div class="skill-mf">
+									<p class="title-s"> Skills </p>
+									<span> C & C++ </span> <span class="pull-right"></span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 95%;"
+											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									
+									<span> Java </span> <span class="pull-right"></span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 95%;"
+											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+ 
+									<span> Python(High-level Programming Language) </span> <span class="pull-right"></span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%"
+											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span> Web-Development </span> <span class="pull-right"></span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 90%"
+											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span> Data Analysis </span> <span class="pull-right"></span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 50%"
+											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span> AI & Machine Learning </span> <span class="pull-right"></span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 50%"
+											aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+
+					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+						<div class="row justify-content-start pb-3">
+							<div class="col-md-12 heading-section ftco-animate">
+
+								<h1 class="big"> About </h1>
+								<h2 class="mb-4"> About Me </h2>
+
+								<p>I'm Recently a Computer Science Graduate with a Passion for Technology & Continuous Learning.
+								Skilled in Java, C, Python, and JavaScript, I Excel in both Front-End & Back-End Development.
+								Aspiring to transition into a DevOps engineering role, I Aim to Leverage My Development Skills
+								Interest in Automation, Continuous Integration, & Deployment practices.
+								Through my Studie, Projects. I have developed a deep understanding of software development life cycles and efficient, automated workflows. I am a proactive problem-solver and strong communicator, eager to work with cross-functional teams in a collaborative, fast-paced environment. My goal is to grow as a DevOps engineer and make a meaningful impact on technology infrastructure and operations..</p>
+								<ul class="about-info mt-4 px-md-0 px-2">
+									<li class="d-flex"><span>Profile:</span> <span>DevOps Engineer &amp; Developer</span>
+									</li>
+									<li class="d-flex"><span>Domain:</span> <span>Creator by God'sBless</span></li>
+									<li class="d-flex"><span>Education:</span> <span>Bachelor of Engineering</span></li>
+									<li class="d-flex"><span>Language:</span> <span>English, Hindi, Odia, Bit-Telugu through songs</span></li>
+									
+									<li class="d-flex"><span>Interest:</span> <span>Sci-fi, Movies,
+											Providing best Guide to Jr's& Hearty Respect to Sr's</span></li>
+
+								</ul>
+							</div>
+						</div>
+
+
+						<div class="counter-wrap ftco-animate d-flex mt-md-3">
+							<div class="text">
+								<p class="mb-4">
+									<span class="number" data-number="4">0</span> <span>+</span>
+									<span>&nbsp; Projects Completed</span>
+								</p>
+								<p><a href="https://www.linkedin.com/in/ayushman-tripathy-7bb149295/"
+										class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<section class="ftco-section ftco-no-pb" id="resume-section">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-10 heading-section text-center ftco-animate">
+					<h1 class="big big-2"> Resume </h1>
+					<h2 class="mb-4"> Resume </h2>
+					<p> As a Fresh Engineer with a passion for Technology & Background in DevOps, Java development, AI, and machine learning, I am eager to embark on a career path that allows me to leverage my skills in driving business strategies through data-driven insights. While I may lack direct experience, my proficiency in these areas equips me to excel in roles requiring data science, statistical analysis, and project management. With a keen eye for problem-solving and a thirst for learning, I am poised to make meaningful contributions to any team or project I join.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<h1 class="big-4"> Experience </h1>
+				<div class="underline"></div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date"> 2024-Present </span>
+						<h2> Web Devlopment Intern </h2>
+						<span class="position"> MotionCut </span>
+						<p class="mt-4">Founded in 2023, MotionCut has grown from a vision to reality, thanks to the dedication and passion of our team. Our journey began with a simple goal: to create opportunities for students to gain real-world experience and make meaningful contributions to their future careers.
+						<ul>
+							<li> During my web development internship at Motioncut, I built a personal portfolio, Movie Buff Central, and Cricket Star Showcase using HTML, CSS, and JavaScript. </li>
+							<li> Personal Portfolio: A Showcase of my Skills, Projects, & Experience, Designed to highlight my expertise in web development.</li>
+							<li> Movie Central : A Dynamic Website featuring Movie-reviews, Trailers, Recommendations for Cinema Enthusiasts.</li>
+							<li>
+								Cricket Star Showcase: An Interactive Platform providing Detailed-Profiles & Statistics of Cricket stars from around the World.
+							</li>
+							
+						</ul>
+						</p>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">2023-24</span>
+						<h2> Java Developer Intern </h2>
+						<span class="position">MotionCut</span>
+						<p class="mt-4"> MotionCut has grown from a vision to reality, 
+						Thanks to the Dedication & Passion of our Team.
+						Our Journey began with a Simple Goal: To Create Opportunities for Students to Gain Real-world Experience & Make meaningful contributions to their future Careers
+						<ul>
+							<li> I used Java Swing to Develop Interactive Applications, Enhancing my understanding of GUI Development </li>
+							<li> This experience allowed me to apply my learning in real-world scenarios effectively </li>
+							<li>
+								I also collaborated on diverse projects that ranged from simple calculators to more complex applications like expense trackers and dungeon games. 
+							</li>
+							<li>
+								This hands-on experience not only honed my technical skills but also improved my problem-solving abilities.Overall, the internship was a valuable opportunity to develop practical Java programming expertise.
+							</li>
+						</ul>
+						</p>
+					</div>
+
+				</div>
+			</div>
+
+			<br>
+			<br>
+
+			<div class="row">
+				<h1 class="big-4"> Education </h1>
+				<div class="underline"></div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date"> 2022-2026 </span>
+						<h2>Bachelor of Technology in CSE Branch</h2>
+						<span class="position">University:Biju Patnaik University of Technology(BPUT)</span>
+						<p class="mt-4">Grade: 1st Distinction</p>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date"> 2020-2022 </span>
+						<h2>Higher Secondary School</h2>
+						<span class="position">College:Council of Higher Secondary Education, Odisha</span>
+						<p class="mt-4"> Grade: 1st Class</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center mt-5">
+				<div class="col-md-6 text-center ftco-animate">
+					<p><a href="https://drive.google.com/" class="btn btn-primary py-4 px-5">Download CV</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section" id="project-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2"> Projects </h1>
+					<h2 class="mb-4"> Projects </h2>
+					<p> Below are the Sample DevOps projects on JS, HTML, CSS </p>
+				</div>
+			</div>
+			<div class="row d-flex">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://github.com/ayushman012/Flipkart_Clone.git"
+							class="block-20 zoom-effect" style="background-image: url('images/proj_1.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://github.com/ayushman012/Flipkart_Clone.git"> Clone OF NETFLIX </a></h3>
+							<p> Experience endless entertainment with our Netflix clone website!
+							Built using HTML, CSS, and JavaScript, It offers a Sleek & User-Friendly Interface for Browsing & Streaming your favorite Movies & TV Shows. Dive into a world of content, All in one place!</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://github.com/ayushman012/QuizAnalyzer.git"
+							class="block-20 zoom-effect" style="background-image: url('images/proj_2.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://github.com/ayushman012/QuizAnalyzer.git">Quiz Application</a></h3>
+							<p> Quiz Application A web-based quiz app in HTML, CSS, and JavaScript. User-friendly design, sequential questions, and dynamic scoring. Clone, open `index.html`, answer questions. By Ananta Narayan Sethy (Started in January 2022)</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="https://github.com/ayushman012/TripAdvisor-WebPage"
+							class="block-20 zoom-effect" style="background-image: url('images/proj_3.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://github.com/ayushman012/TripAdvisor-WebPage">Trip advisor Website
+									</a></h3>
+							<p> Discover your next Adventure with our All-in-One Travel Website! Book Vacations, Hotels, & Transportation Effortlessly, & Enjoy a stress-free Trip planning Experience. Start your journey with us today!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<!-- added justify-content-center to center align the last two projects -->
+			<div class="row d-flex justify-content-center">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https:///Cricket-Legends-Hub/"
+							class="block-20 zoom-effect" style="background-image: url('images/proj_5.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://github.com/ayushman012/CentralBuffConnoisseur.git">Movie Bluff Central</a></h3>
+							<p>"Movie Bluff Central" is a comprehensive movie website dedicated to the Marvel franchise. It offers an in-depth introduction to the Marvel universe, covering its iconic movie series and popular shows. The website also keeps fans up to date with the latest news on upcoming Marvel movies and top trending news in the industry. Users can seamlessly watch trailers for each movie by simply clicking on them, making it a go-to platform for all things Marvel.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://github.com/ayushman012/CentralBuffConnoisseur.git"
+							class="block-20 zoom-effect" style="background-image: url('images/proj_4.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://github.com/ayushman012/Cric'LC.git">CLClub</a></h3>
+							<p>"Cricket Legends Hub" is a detailed website designed for cricket enthusiasts. It provides a rich history of the sport, highlights famous players, and outlines their achievements. Users can explore profiles, learn about key moments in cricket, and even watch historic match clips sourced from YouTube. Additionally, the fan zone allows users to engage with the community by sharing their favorite player stories or voting for the greatest players of all time, making it an interactive and informative hub for cricket lover.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+		<div class="container">
+			<div class="row d-md-flex align-items-center">
+				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+					<div class="block-18">
+						<div class="text">
+							<strong class="number" data-number="20">0</strong>
+							<span> Age </span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+					<div class="block-18">
+						<div class="text">
+							<strong class="number" data-number="5">0</strong>
+							<span> Projects </span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+					<div class="block-18">
+						<div class="text">
+							<strong class="number" data-number="10000">0</strong>
+							<span> Connected with People </span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+					<div class="block-18">
+						<div class="text">
+							<strong class="number" data-number="500">0</strong>
+							<span> Cups of Coffee </span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+			<!-- <div class="container"> -->
+			<div class="row justify-content-center">
+				<div class="col-md-7 ftco-animate text-center">
+					<h2> More Projects On <span> GitHub </span> </h2>
+					<div class="heading">
+						<h4> Code isn't just lines of Logic;
+						It's the language of My Passion, Crafting dreams into reality.</h4>
+						<br>
+						<p><a href="https://github.com/ayushman012" class="btn btn-primary py-3 px-5">GitHub</a></p>
+					</div>
+				</div>
+			</div>
+			<!-- </div> -->
+		</div>
+	</section>
+
+
+
+	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2"> Contact </h1>
+					<h2 class="mb-4"> Contact Me </h2>
+					<p> Below are the Details to Reach out to Me! </p>
+				</div>
+			</div>
+
+			<div class="row d-flex contact-info mb-5">
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-map-signs"></span>
+						</div>
+						<h3 class="mb-4"> Address </h3>
+						<p> Brahampur, Ganjam, India</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-phone2"></span>
+						</div>
+						<h3 class="mb-4"> Contact Number </h3>
+						<p><a href="tel://0101010101"> 7008743283 </a></p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-paper-plane"></span>
+						</div>
+						<h3 class="mb-4"> Email Address </h3>
+						<p><a href="mailto:info@yoursite.com"> ayushmantripathy013 <br>@gmail.com</a></p>
+					</div>
+				</div>
+				
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-globe"></span>
+							
+				<div class="container">
+					<br>
+					<br>
+					<div class="row justify-content-center">
+						<div class="col-md-7 ftco-animate text-center">
+							<h2>Have a<span> Question? </span> <a href="https://forms.gle/xHcpvBQSYWGLTCcN6"
+									class="btn btn-primary py-3 px-5"> Click Here </a> </h2>
+						</div>
+					</div>
+					<br>
+					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+						<li class="ftco-animate normal-txt"> Find Me On </li>
+						<li class="ftco-animate"><a href="https://www.youtube.com/@ayushmantrpt/UCYtO5oV1VnuZ5oXS2JgwMwA"><span
+									class="icon-youtube"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.linkedin.com/in/ayushman-tripathy-7bb149295/"><span
+									class="icon-linkedin"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.facebook.com/ayushman.tripathy.013/"><span
+									class="icon-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com/regd.ayushman/"><span
+									class="icon-instagram"></span></a></li>
+					</ul>
+					</br>
+				</div>
+			</div>
+	</section>
+
+
+
+
+	<footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+
+					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> All Rights Reserved | This Template
+						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> <a
+							href="" target="_blank"></a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
